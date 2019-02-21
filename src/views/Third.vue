@@ -3,7 +3,7 @@
         <div class="top">
             <div class="top-left">
                 <div class="card-header">
-                    <span>基层人员情况</span>
+                    <span>人员情况</span>
                 </div>
                 <div class="top-left-content">
                     <div class="top-left-left">
@@ -11,23 +11,27 @@
                             <div class="card-header">
                                 <span>主官在位情况</span>
                             </div>
+                            <ThirdTopLeftLeftTop></ThirdTopLeftLeftTop>
                         </div>
                         <div class="top-left-left-bottom">
                             <div class="card-header">
                                 <span>各单位人员外出情况</span>
                             </div>
+                            <ThirdTopLeftLeftBottom></ThirdTopLeftLeftBottom>
                         </div>
                     </div>
                     <div class="top-left-right">
                         <div class="top-left-right-top">
                             <div class="card-header">
-                                <span>主官在位情况</span>
+                                <span>关键岗位人员情况</span>
                             </div>
+                            <ThirdTopLeftRightTop></ThirdTopLeftRightTop>
                         </div>
                         <div class="top-left-right-bottom">
                             <div class="card-header">
-                                <span>各单位人员外出情况</span>
+                                <span>重点关注人员情况</span>
                             </div>
+                            <ThirdTopLeftRightBottom></ThirdTopLeftRightBottom>
                         </div>
 
                     </div>
@@ -42,11 +46,13 @@
                         <div class="card-header">
                             <span>枪支情况</span>
                         </div>
+                        <ThirdTopRightLeft></ThirdTopRightLeft>
                     </div>
                     <div class="top-right-right">
                         <div class="card-header">
                             <span>弹药消耗情况</span>
                         </div>
+                        <ThirdTopRightRight></ThirdTopRightRight>
                     </div>
                 </div>
             </div>
@@ -55,15 +61,15 @@
             <div class="bottom-left">
                 <div class="bottom-left-left">
                     <div class="card-header">
-                        <span>涉密载体情况</span>
+                        <span>外来人员</span>
                     </div>
-                    bottom-left-left
+                    <ThirdBottomLeftLeft></ThirdBottomLeftLeft>
                 </div>
                 <div class="bottom-left-right">
                     <div class="card-header">
-                        <span>手机违规使用情况</span>
+                        <span>勤务车辆情况</span>
                     </div>
-                    bottom-left-right
+                    <ThirdBottomLeftRight></ThirdBottomLeftRight>
                 </div>
             </div>
             <div class="bottom-right">
@@ -75,13 +81,13 @@
                         <div class="card-header">
                             <span>涉密载体情况</span>
                         </div>
-                        bottom-right-left
+                        <ThirdBottomRightLeft></ThirdBottomRightLeft>
                     </div>
                     <div class="bottom-right-right">
                         <div class="card-header">
                             <span>手机违规使用情况</span>
                         </div>
-                        bottom-right-right
+                        <ThirdBottomRightRight></ThirdBottomRightRight>
                     </div>
                 </div>
             </div>
@@ -89,13 +95,34 @@
     </div>
 </template>
 <script>
+    import ThirdBottomLeftLeft from '../components/third/ThirdBottomLeftLeft'
+    import ThirdBottomLeftRight from '../components/third/ThirdBottomLeftRight.vue'
+    import ThirdBottomRightLeft from '../components/third/ThirdBottomRightLeft'
+    import ThirdBottomRightRight from '../components/third/ThirdBottomRightRight'
+    import ThirdTopLeftLeftBottom from '../components/third/ThirdTopLeftLeftBottom'
+    import ThirdTopLeftLeftTop from '../components/third/ThirdTopLeftLeftTop'
+    import ThirdTopLeftRightBottom from '../components/third/ThirdTopLeftRightBottom'
+    import ThirdTopLeftRightTop from '../components/third/ThirdTopLeftRightTop'
+    import ThirdTopRightLeft from '../components/third/ThirdTopRightLeft'
+    import ThirdTopRightRight from '../components/third/ThirdTopRightRight'
     export default {
         data () {
             return {
                 msg: 'Welcome to Your Vue.js App'
             }
         },
-        components: {},
+        components: {
+            'ThirdBottomLeftLeft':ThirdBottomLeftLeft,
+            'ThirdBottomLeftRight':ThirdBottomLeftRight,
+            'ThirdBottomRightLeft':ThirdBottomRightLeft,
+            'ThirdBottomRightRight':ThirdBottomRightRight,
+            'ThirdTopLeftLeftBottom':ThirdTopLeftLeftBottom,
+            'ThirdTopLeftLeftTop':ThirdTopLeftLeftTop,
+            'ThirdTopLeftRightBottom':ThirdTopLeftRightBottom,
+            'ThirdTopLeftRightTop':ThirdTopLeftRightTop,
+            'ThirdTopRightLeft':ThirdTopRightLeft,
+            'ThirdTopRightRight':ThirdTopRightRight,
+        },
         mounted(){
         },
         methods: {}

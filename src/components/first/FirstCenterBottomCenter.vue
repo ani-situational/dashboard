@@ -3,9 +3,9 @@
         <div class="container">
             <div class="div-item"
                  v-for="(item,index) in divs"
+                 :key="index"
             >
                 <div class="div-main" v-if="item.isShow"
-                     :key="index"
                      :style="item.styleObject"></div>
             </div>
         </div>
