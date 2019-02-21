@@ -36,6 +36,12 @@
                     xAxis: {
                         type: 'value',
                         boundaryGap: [0, 0.01],
+                        splitLine: {
+                            show: true,
+                            lineStyle: {
+                                color: ['#333']
+                            }
+                        },
                         axisLabel: {
                             color: '#edf1f4'
                         },

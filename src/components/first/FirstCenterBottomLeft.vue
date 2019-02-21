@@ -52,19 +52,19 @@
                             type:'pie',
                             radius: ['50%', '65%'],
                             avoidLabelOverlap: false,
-                            label: {
-                                normal: {
-                                    show: false,
-                                    position: 'center'
-                                },
-                                emphasis: {
-                                    show: true,
-                                    textStyle: {
-                                        fontSize: '30',
-                                        fontWeight: 'bold'
-                                    }
-                                }
-                            },
+//                            label: {
+//                                normal: {
+//                                    show: false,
+//                                    position: 'center'
+//                                },
+//                                emphasis: {
+//                                    show: true,
+//                                    textStyle: {
+//                                        fontSize: '30',
+//                                        fontWeight: 'bold'
+//                                    }
+//                                }
+//                            },
                             label: {
                                 normal: {
                                     formatter: '{b|{b}：}{c}  ',
