@@ -1,18 +1,18 @@
 <template>
   <div class="content">
     <Carousel v-model="value1"
-              autoplay="true"
-              autoplay-speed="5000"
+              :autoplay=true
+              :autoplay-speed=5000
               height="1.4rem"
-              arrow="false"
-              radius-dot="true"
+              arrow="never"
+              :radius-dot=true
               loop>
-    <CarouselItem>
-      <div class="demo-carousel">123</div>
-    </CarouselItem>
-    <CarouselItem>
-      <div class="demo-carousel">45</div>
-    </CarouselItem>
+      <CarouselItem>
+        <div class="demo-carousel">123</div>
+      </CarouselItem>
+      <CarouselItem>
+        <div class="demo-carousel">45</div>
+      </CarouselItem>
     </Carousel>
   </div>
 </template>
@@ -20,7 +20,8 @@
     export default {
         data () {
             return {
-                value1: 0
+                value1: 0,
+//                itemHeight: "1.4rem"
 
             }
         },

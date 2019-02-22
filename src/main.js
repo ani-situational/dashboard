@@ -13,6 +13,13 @@ import 'echarts/lib/chart/line'
 import 'echarts/lib/chart/bar'
 import 'echarts/lib/chart/pie'
 import 'echarts/lib/chart/bar'
+
+import http from './services/http'
+import ports from './services/ports'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios, axios)
+
 Vue.component('chart', ECharts)
 Vue.use(iView);
 
@@ -20,6 +27,8 @@ Vue.use(iView);
 // import echarts from 'echarts'
 // Vue.prototype.$echarts = echarts
 
+Vue.prototype.http = http
+Vue.prototype.ports = ports
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 Vue.prototype.echartsResize = function(ref){
