@@ -104,6 +104,7 @@
         mounted() {
 //            this.queryData();
             this.http.get(this.ports.manage.test,res=>{
+                console.log('res')
                 console.log(res)
             })
         },
