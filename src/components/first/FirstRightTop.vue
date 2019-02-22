@@ -58,13 +58,15 @@
                         {
                             type: 'value',
                             boundaryGap: ['0%', '20%'],
-                            axisLabel: {
-                                color: '#edf1f4',
-
-                                fontSize: 10,
+                            splitLine: {
+                                show: true,
+                                lineStyle: {
+                                    color: ['#333']
+                                }
                             },
                             axisLabel: {
-                                color: '#edf1f4'
+                                color: '#edf1f4',
+                                fontSize: 10,
                             },
                             axisLine: {
                                 lineStyle: {
@@ -110,6 +112,7 @@
         }
     }
 </script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">

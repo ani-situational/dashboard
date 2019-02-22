@@ -28,20 +28,21 @@
                             name:'',
                             type:'pie',
                             radius: ['50%', '70%'],
+
                             avoidLabelOverlap: false,
-                            label: {
-                                normal: {
-                                    show: false,
-                                    position: 'center'
-                                },
-                                emphasis: {
-                                    show: true,
-                                    textStyle: {
-                                        fontSize: '30',
-                                        fontWeight: 'bold'
-                                    }
-                                }
-                            },
+//                            label: {
+//                                normal: {
+//                                    show: false,
+//                                    position: 'center'
+//                                },
+//                                emphasis: {
+//                                    show: true,
+//                                    textStyle: {
+//                                        fontSize: '30',
+//                                        fontWeight: 'bold'
+//                                    }
+//                                }
+//                            },
                             label: {
                                 normal: {
                                     formatter: '{b|{b}：}{c}  ',
@@ -119,6 +120,9 @@
         }
     }
 </script>
+
+
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
