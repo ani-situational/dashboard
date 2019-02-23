@@ -1,11 +1,16 @@
 <template>
   <div class="content">
     <!--<h1>{{ msg }}</h1>-->
-    <chart  ref="chart"
-            style="height: 1.5rem;width: 2.3rem"
-            :options="option"
-            :autoresize=true
-    ></chart>
+    <div class="content-top">
+
+    </div>
+    <div class="content-bottom">
+      <chart  ref="chart"
+              style="height: 100%;width: 100%"
+              :options="option"
+              :autoresize=true
+      ></chart>
+    </div>
   </div>
 </template>
 <script>
@@ -21,10 +26,10 @@
                         }
                     },
                     grid: {
-                        left: '3%',
-                        right: '4%',
-                        bottom: '3%',
-                        containLabel: true
+                        x: 70,
+                        y: 20,
+                        x2: 20,
+                        y2: 30
                     },
                     xAxis: {
                         type: 'value',
@@ -102,5 +107,19 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-
+  .content{
+    width: 100%;
+    height: 85%;
+    border: 1px solid grey;
+    .content-top{
+      width: 100%;
+      height: 30%;
+      border: 1px solid grey;
+    }
+    .content-bottom{
+      width: 80%;
+      height: 70%;
+      border: 1px solid grey;
+    }
+  }
 </style>

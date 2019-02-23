@@ -1,11 +1,27 @@
 <template>
   <div class="content">
     <!--<h1>{{ msg }}</h1>-->
-    <chart  ref="chart"
-            style="height: 1.5rem;width: 2.3rem"
-            :options="option"
-            :autoresize=true
-    ></chart>
+    <div class="content-top">
+      <div class="top-left">
+        <chart  ref="chart"
+                style="height: 100%;width: 100%"
+                :options="option"
+                :autoresize=true
+        ></chart>
+      </div>
+      <div class="top-right">
+
+      </div>
+    </div>
+    <div class="centent-bottom">
+      <chart  ref="chart1"
+              style="height:100%;width: 100%"
+              :options="option1"
+              :autoresize=true
+      ></chart>
+    </div>
+
+
   </div>
 </template>
 <script>
@@ -17,6 +33,14 @@
                     tooltip: {
                         trigger: 'item',
                         formatter: "{a} <br/>{b}: {c} ({d}%)"
+                    },
+                    grid: {
+//                        show: false
+                        x: 90,
+                        y: 1,
+                        x2: 1,
+                        y2: 1,
+                        // containLabel: true
                     },
                     legend: {
                         orient: 'vertical',
@@ -79,7 +103,90 @@
                             ]
                         }
                     ]
-                }
+                },
+                option1: {
+                    textStyle: {
+                        fontFamily: 'Microsoft YaHei',
+                    },
+                    color: ['#52d2d7', '#1d436b'],
+                    tooltip : {
+                        trigger: 'axis',
+                        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                        }
+                    },
+                    legend: {
+                        data: ['实检', '应检']
+                    },
+                    grid: {
+//                        show: false
+                        x: 90,
+                        y: 1,
+                        x2: 1,
+                        y2: 1,
+                        // containLabel: true
+                    },
+                    xAxis:  {
+                        show: false,
+                        type: 'value',
+                        borderWidth: 0,
+
+                    },
+                    yAxis: {
+                        type: 'category',
+                        nameTextStyle:{
+                            color: '#e2e2e5',
+                            fontStyle: 'italic',
+                            fontSize: 20
+                        },
+                        axisLabel: {
+                            color: '#edf1f4'
+                        },
+                        axisLine: {
+                            show: false
+                        },
+                        data: ['安全组','保卫科','弹药科','部队管理科','装备管理科']
+                    },
+                    series: [
+                        {
+                            name: '直接访问',
+                            type: 'bar',
+                            stack: '总量',
+                            barWidth: '30%',
+                            label: {
+                                normal: {
+                                    show: true,
+                                    position: 'insideRight'
+                                }
+                            },
+                            data: [320, 302, 301, 334, 404],
+                            itemStyle:{
+                                borderColor:'#52d2d7',
+                                borderWidth:'2'
+                            }
+
+                        },
+                        {
+                            name: '邮件营销',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                normal: {
+                                    show: true,
+                                    position: 'insideRight'
+                                }
+                            },
+                            data: [120, 132, 101, 134, 90],
+                            itemStyle:{
+                                color:'#1d436b',
+                                borderColor:'#52d2d7',
+                                borderWidth:'2'
+                            }
+                        },
+
+                    ]
+                },
+
             }
         },
         props: [
@@ -108,5 +215,29 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-
+  .content{
+    width: 100%;
+    height: 89%;
+    border: 1px solid grey;
+    .content-top{
+      height: 40%;
+      width: 100%;
+      display: flex;
+      .top-left{
+        width: 70%;
+        height: 100%;
+        border: 1px solid grey;
+      }
+      .top-right{
+        width: 30%;
+        height: 100%;
+        border: 1px solid grey;
+      }
+    }
+    .centent-bottom{
+      width: 90%;
+      height: 55%;
+      border: 1px solid grey;
+    }
+  }
 </style>

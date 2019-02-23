@@ -1,11 +1,25 @@
 <template>
   <div class="content">
     <!--<h1>{{ msg }}</h1>-->
-    <chart  ref="chart1"
-            style="height:2.5rem;width: 4.0rem"
-            :options="option"
-            :autoresize=true
-    ></chart>
+    <div class="content-top">
+      <div class="content-top-left">
+        <chart  ref="chart"
+                style="height: 100%;width: 100%"
+                :options="option"
+                :autoresize=true
+        ></chart>
+      </div>
+      <div class="content-top-right">
+
+      </div>
+    </div>
+    <div class="content-bottom">
+      <chart  ref="chart"
+              style="height:100%;width: 100%"
+              :options="option1"
+              :autoresize=true
+      ></chart>
+    </div>
    </div>
 </template>
 <script>
@@ -13,6 +27,82 @@
         data () {
             return {
                 option: {
+                    //color:['#376d3f', '#6b135d', '#1b77d4', '#9b784c'],
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b}: {c} ({d}%)"
+                    },
+                    grid: {
+//                        show: false
+                        x: 90,
+                        y: 1,
+                        x2: 1,
+                        y2: 1,
+                        // containLabel: true
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        x: 'left',
+                        data:['已完成','未完成']
+                    },
+                    series: [
+                        {
+                            color:['#ad7319'],
+                            name:'访问来源',
+                            type:'pie',
+                            selectedMode: 'single',
+                            radius: ['48%', '50%'],
+                            label: {
+                                normal: {
+                                    position: 'inner'
+                                }
+                            },
+                            labelLine: {
+                                normal: {
+                                    show: true
+                                }
+                            },
+                            data:[
+                                {value:645, name:''},
+                            ]
+                        },
+                        {
+                            name:'',
+                            color:['ad7319', '#132353'],
+                            type:'pie',
+                            radius: ['50%', '65%'],
+                            avoidLabelOverlap: false,
+                            label: {
+                                normal: {
+                                    show: false,
+                                    position: 'center'
+                                },
+                                emphasis: {
+                                    show: true,
+                                    textStyle: {
+                                        fontSize: '30',
+                                        fontWeight: 'bold'
+                                    }
+                                }
+                            },
+
+                            itemStyle: {
+                                opacity: 0.5
+                            },
+
+                            data:[
+                                {value:109, name:'已完成'},
+                                {value:310,
+                                    name:'未完成',
+                                    itemStyle: {
+                                        opacity: 0
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                option1: {
                     textStyle: {
                         fontFamily: 'Microsoft YaHei',
                     },
@@ -27,10 +117,11 @@
                         data: ['实检', '应检']
                     },
                     grid: {
-                        show: false
-                        // left: '3%',
-                        // right: '4%',
-                        // bottom: '3%',
+//                        show: false
+                         x: 90,
+                         y: 1,
+                         x2: 1,
+                         y2: 1,
                         // containLabel: true
                     },
                     xAxis:  {
@@ -122,5 +213,33 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-
+  .content{
+    width: 100%;
+    height: 82%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    .content-top{
+      height: 40%;
+      width: 100%;
+      border: 1px solid grey;
+      display: flex;
+      .content-top-left{
+        height: 100%;
+        width: 70%;
+        border: 1px solid grey;
+      }
+      .content-top-right{
+        height: 100%;
+        width: 30%;
+        border: 1px solid grey;
+      }
+    }
+    .content-bottom{
+      height: 60%;
+      border: 1px solid grey;
+      width: 90%;
+    }
+  }
 </style>

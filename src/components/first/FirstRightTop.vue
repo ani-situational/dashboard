@@ -1,30 +1,36 @@
 <template>
   <div class="content">
-    <Carousel v-model="value1"
-              :autoplay=false
-              :autoplay-speed=5000
-              arrow="never"
-              :radius-dot=true
-              height="1.42rem"
-              loop
-              style="height:100%;"
+    <div class="content-left">
 
-    >
-      <CarouselItem style="" >
-        <chart  ref="chart"
-                style="height: 100%;width: 100%"
-                :options="option"
-                :autoresize=true
-        ></chart>
-      </CarouselItem>
-      <CarouselItem>
-        <chart  ref="chart"
-                style="height: 100%;width: 100%"
-                :options="option"
-                :autoresize=true
-        ></chart>
-      </CarouselItem>
-    </Carousel>
+    </div>
+    <div class="content-right">
+      <Carousel v-model="value1"
+                :autoplay=false
+                :autoplay-speed=5000
+                arrow="never"
+                :radius-dot=true
+                height="1.42rem"
+                loop
+                style="height:100%;"
+
+      >
+        <CarouselItem style="" >
+          <chart  ref="chart"
+                  style="height: 100%;width: 100%"
+                  :options="option"
+                  :autoresize=true
+          ></chart>
+        </CarouselItem>
+        <CarouselItem>
+          <chart  ref="chart"
+                  style="height: 100%;width: 100%"
+                  :options="option"
+                  :autoresize=true
+          ></chart>
+        </CarouselItem>
+      </Carousel>
+    </div>
+
   </div>
 </template>
 <script>
@@ -43,13 +49,10 @@
                     },
                     grid: {
                         //type: 'dotted',
-                        left: '3%',
-                        right: '4%',
-                        bottom: '3%',
-                        borderColor: '#1b3970',
-                        borderWidth: 1,
-                        borderType: 'dotted',
-                        containLabel: true
+                        x: 30,
+                        y: 20,
+                        x2: 1,
+                        y2: 30,
                     },
                     xAxis: [
                         {
@@ -157,6 +160,18 @@
   .content{
     /*padding-left: 35%;*/
     height: 82%;
+    width: 100%;
+    display: flex;
+    .content-left{
+      width: 30%;
+      height: 40%;
+      border: 1px solid grey;
+    }
+    .content-right{
+      width: 70%;
+      height: 100%;
+      border: 1px solid grey;
+    }
   }
   .ivu-carousel-list{
     height: 100% !important;

@@ -46,13 +46,10 @@
                     },
                     grid: {
                         //type: 'dotted',
-                        left: '3%',
-                        right: '4%',
-                        bottom: '3%',
-                        borderColor: '#1b3970',
-                        borderWidth: 1,
-                        borderType: 'dotted',
-                        containLabel: true
+                        x: 50,
+                        y: 20,
+                        x2: 1,
+                        y2: 40,
                     },
                     xAxis: [
                         {
@@ -135,12 +132,22 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
   .content{
-    padding-left: 35%;
     height: 82%;
+    width: 100%;
+    /*position: relative;*/
+    display: flex;
+    justify-content: space-around;
     .content-left{
+      /*position: absolute;*/
+      /*left: 5%;*/
+      /*top:0;*/
+      height: 40%;
+      width: 20%;
       border: 1px solid grey;
     }
     .content-right{
+      height: 100%;
+      width: 65%;
       border: 1px solid grey;
     }
   }
