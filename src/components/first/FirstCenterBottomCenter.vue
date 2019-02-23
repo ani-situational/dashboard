@@ -75,19 +75,19 @@
         align-items: center;
         .container {
             width: 45%;
-            height: 55%;
+            height: 65%;
             border: 6px solid #222541;
             border-radius: 8%;
             padding: 0 0 3% 0;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
             .div-item {
-                margin-top: 10%;
+                margin-top: 9%;
                 width: 90%;
                 /*height: 0.07rem;*/
-                height: 8%;
+                height: 5.5%;
                 .div-main {
                     width: 100%;
                     height: 100%;
