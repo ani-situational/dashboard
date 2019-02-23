@@ -1,19 +1,31 @@
 <template>
   <div class="content">
     <Carousel v-model="value1"
-              :autoplay=true
+              :autoplay=false
               :autoplay-speed=5000
-              height="1.4rem"
               arrow="never"
               :radius-dot=true
-              loop>
-    <CarouselItem>
-      <div class="demo-carousel">123</div>
+              height="1.42rem"
+              loop
+              style="height:100%;"
+
+    >
+    <CarouselItem style="" >
+      <chart  ref="chart"
+              style="height: 100%;width: 100%"
+              :options="option"
+              :autoresize=true
+      ></chart>
     </CarouselItem>
     <CarouselItem>
-      <div class="demo-carousel">45</div>
+      <chart  ref="chart"
+              style="height: 100%;width: 100%"
+              :options="option"
+              :autoresize=true
+      ></chart>
     </CarouselItem>
     </Carousel>
+
   </div>
 </template>
 <script>
@@ -47,9 +59,6 @@
                             axisTick: {
                                 alignWithLabel: true
                             },
-                            splitLine: {
-                                show: false
-                            },
                             axisLabel: {
                                 color: '#edf1f4',
                                 fontSize: 10,
@@ -69,15 +78,15 @@
                         {
                             type: 'value',
                             boundaryGap: ['0%', '20%'],
-                            axisLabel: {
-                                color: '#edf1f4',
-                                fontSize: 10,
-                            },
                             splitLine: {
                                 show: true,
                                 lineStyle: {
                                     color: ['#333']
                                 }
+                            },
+                            axisLabel: {
+                                color: '#edf1f4',
+                                fontSize: 10,
                             },
                             axisLine: {
                                 lineStyle: {
@@ -99,7 +108,7 @@
                                 borderColor: '#00ddff',
                                 borderWidth: 1
                             },
-                            data: [1, 7, 3, 7, 3, 2, 1]
+                            data: [1, 7, 3, 17, 3, 22, 100]
                         }
                     ]
                 },
@@ -123,23 +132,11 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-
-  .el-carousel__container {
-    height: 100% !important;
-  }
-
   .content{
     padding-left: 35%;
-    height: 80%;
+    height: 82%;
   }
-  .charts-content {
-  }
-
-  .el-carousel__item:nth-child(2n) {
-    background-color: #142248;
-  }
-
-  .el-carousel__item:nth-child(2n+1) {
-    background-color: #142248;
+  .ivu-carousel-list{
+    height: 100% !important;
   }
 </style>

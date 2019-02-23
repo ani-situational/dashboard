@@ -22,11 +22,9 @@ Vue.use(VueAxios, axios)
 
 Vue.component('chart', ECharts)
 Vue.use(iView);
-
 // 引入echarts
 // import echarts from 'echarts'
 // Vue.prototype.$echarts = echarts
-
 Vue.prototype.http = http
 Vue.prototype.ports = ports
 Vue.config.productionTip = false

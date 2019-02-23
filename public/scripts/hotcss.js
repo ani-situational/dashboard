@@ -94,6 +94,7 @@
         if( !innerWidth ){ return false;}
 
         document.documentElement.style.fontSize = ( innerWidth*20/320 ) + 'px';
+        // document.documentElement.style.fontSize = ( innerWidth/192 ) + 'px';
         hotcss.callback && hotcss.callback();
 
     };

@@ -1,18 +1,18 @@
 <template>
-  <div class="content">
-    <chart  ref="chart1"
-            style="height: 100%;width: 100%"
-            :options="orgOptions"
-            :autoresize=true
-    ></chart>
-  </div>
+    <div class="content">
+        <chart ref="chart1"
+               style="height: 100%;width: 100%"
+               :options="orgOptions"
+               :autoresize=true
+        ></chart>
+    </div>
 </template>
 <script>
     export default {
         data () {
             return {
                 orgOptions: {
-                    color:['#9a1e7a', '#7533c1', '#1b77d4', '#9b784c'],
+                    color: ['#9a1e7a', '#7533c1', '#1b77d4', '#9b784c'],
                     tooltip: {
                         trigger: 'item',
                         formatter: "{a} <br/>{b}: {c} ({d}%)"
@@ -21,12 +21,12 @@
                         orient: 'vertical',
                         x: 'left',
                         color: 'edf1f4',
-                        data:['人员管理','车辆管理','枪弹管理','涉密载体管理']
+                        data: ['人员管理', '车辆管理', '枪弹管理', '涉密载体管理']
                     },
                     series: [
                         {
-                            name:'',
-                            type:'pie',
+                            name: '',
+                            type: 'pie',
                             radius: ['50%', '70%'],
 
                             avoidLabelOverlap: false,
@@ -87,11 +87,11 @@
                                     }
                                 }
                             },
-                            data:[
-                                {value:335, name:'人员管理'},
-                                {value:310, name:'车辆管理'},
-                                {value:234, name:'枪弹管理'},
-                                {value:135, name:'涉密载体管理'},
+                            data: [
+                                {value: 335, name: '人员管理'},
+                                {value: 310, name: '车辆管理'},
+                                {value: 234, name: '枪弹管理'},
+                                {value: 135, name: '涉密载体管理'},
                             ]
                         }
                     ]
@@ -102,32 +102,30 @@
             'title',
         ],
         mounted() {
-//            this.queryData();
-            this.http.get(this.ports.manage.test,res=>{
-                console.log('res')
-                console.log(res)
-            })
+            this.queryData();
         },
-        methods:{
-//          queryData(){
-//              setInterval(() => {
-//                  this.orgOptions.series[0].data[0]= this.orgOptions.series[0].data[0]+100;
-//                  let newOptions = Object.assign({},this.orgOptions);
-//                  this.orgOptions = newOptions;
-//              },1000)
-//          }
+        methods: {
+          queryData(){
+              this.http.get(this.ports.manage.allProblem, (res) => {
+                  if(res.success){
+                      this.orgOptions.series[0].data[0].value=res.data.人员管理;
+                      this.orgOptions.series[0].data[1].value=res.data.车辆管理;
+                      this.orgOptions.series[0].data[2].value=res.data.枪弹管理;
+                      this.orgOptions.series[0].data[3].value=res.data.涉密载体管理;
+                  }
+              });
+              let newOptions = Object.assign({},this.orgOptions);
+              this.orgOptions = newOptions;
+          }
         },
-        computed: {
-        }
+        computed: {}
     }
 </script>
 
 
-
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-  .content{
-    height: 100%;
-  }
+    .content {
+        height: 100%;
+    }
 </style>

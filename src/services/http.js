@@ -1,13 +1,25 @@
 import axios from 'axios'
-// import BASE_URL from './api'
+import BASE_URL from './api'
+import { Notification } from 'element-ui';
 
-const BASE_URL = "https://api.weigongxue.com"
+
+// const BASE_URL = "https://api.weigongxue.com"
 const TIME_OUT_MS = 60 * 1000 // 默认请求超时时间
 
 /*
  * @param response 返回数据列表
  */
 function handleResults (response) {
+    console.log(response.status)
+    console.log(response)
+    if(response.status != 200){
+        Notification.error({
+            title: response.status,
+            message: response.config.url,
+            showClose: false
+        })
+    }
+    return response.data;
     // let remoteResponse = response.data
     // var result = {
     //     success: false,
@@ -32,7 +44,7 @@ function handleResults (response) {
     //     result.errorCode = remoteResponse.errorCode
     //     result.message = remoteResponse.message
     // }
-    return response
+    // return response
 }
 
 function handleUrl (url) {
@@ -102,6 +114,7 @@ export default {
                 if (exception) {
                     exception(error)
                 } else {
+                    console.log('error')
                     console.log(error)
                 }
             }

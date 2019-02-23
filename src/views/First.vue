@@ -92,28 +92,32 @@
     }
 </script>
 <style lang="less">
+  @bgColor:rgba(9,60,118,0.23);
+  @centerBottomBgColor:none;
   .first{
     width: 100%;
-    height: 91%;
+    height: 90%;
     font-size: 0.25rem;
     display: flex;
     .left{
       width: 25%;
-      padding: 0.1rem 0.1rem 0rem 0.1rem;
-      height: 98%;
+      padding: 0.2rem 0.1rem 0.2rem 0.1rem;
+      /*height: 98%;*/
       .left-top{
         margin: 0 0 0.1rem 0;
-        background: #142248;
-        height: 1.8rem;
+        height: 28%;
+        /*background:#093c76;*/
+        background-color:@bgColor; //#093c76 23%
       }
       .left-middle{
         margin: 0 0 0.1rem 0;
-        background: #142248;
-        height: 26%;
+        background-color:@bgColor;
+        height: 28%;
       }
       .left-bottom{
-        background: #142248;
-        height: 46%;
+        background-color:@bgColor;
+        height: 43%;
+        border: 1px solid red;
       }
     }
     .center{
@@ -139,21 +143,21 @@
         align-items: flex-end;
         /*padding-top: 0.2rem;*/
         .center-bottom-left{
-          background: #142248;
+          background:  @centerBottomBgColor;
           height: 88%;
           width: 32%;
           /*border: 0.1px solid pink;*/
           margin: 0 0.5% 0.5% 1%;
         }
         .center-bottom-center{
-          background: #142248;
+          background:  @centerBottomBgColor;
           height: 88%;
           width: 22%;
           /*border: 0.1px solid pink;*/
           margin: 0 0.5% 0.5% 0.5%;
         }
         .center-bottom-right{
-          background: #142248;
+          background-color: @centerBottomBgColor;
           height: 88%;
           width: 42%;
           margin: 0 1% 0.5% 0.5%;
@@ -163,20 +167,21 @@
     }
     .right{
       width: 25%;
-      padding: 0.1rem 0.1rem 0.2rem 0.1rem;
+      padding: 0.2rem 0.1rem 0.2rem 0.1rem;
       .right-top{
         margin: 0 0 0.1rem 0;
-        background: #142248;
-        height: 1.8rem;
+        background-color:@bgColor;
+        height: 28%;
       }
       .right-middle{
         margin: 0 0 0.1rem 0;
-        background: #142248;
-        height: 26%;
+        background-color:@bgColor;
+        height: 28%;
       }
       .right-bottom{
-        background: #142248;
-        height: 46%;
+        background-color:@bgColor;
+        height: 43%;
+        border: 1px solid red;
       }
     }
   }

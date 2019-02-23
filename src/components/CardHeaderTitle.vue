@@ -33,7 +33,8 @@
     .header {
         width: 100%;
         height: 0.32rem;
-        background: #102e5d;
+        /*background: #102e5d;*/
+        background: rgba(30,88,153,0.45);
         font-size: 0.1rem;
         display: flex;
         align-items: center;

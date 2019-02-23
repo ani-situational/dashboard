@@ -1,11 +1,30 @@
 <template>
   <div class="content">
-    <chart  ref="chart"
-            style="height: 1.5rem;width: 2.3rem"
-            :options="option"
-            :autoresize=true
-    ></chart>
+    <Carousel v-model="value1"
+              :autoplay=false
+              :autoplay-speed=5000
+              arrow="never"
+              :radius-dot=true
+              height="1.42rem"
+              loop
+              style="height:100%;"
 
+    >
+      <CarouselItem style="" >
+        <chart  ref="chart"
+                style="height: 100%;width: 100%"
+                :options="option"
+                :autoresize=true
+        ></chart>
+      </CarouselItem>
+      <CarouselItem>
+        <chart  ref="chart"
+                style="height: 100%;width: 100%"
+                :options="option"
+                :autoresize=true
+        ></chart>
+      </CarouselItem>
+    </Carousel>
   </div>
 </template>
 <script>
@@ -36,6 +55,7 @@
                         {
                             type: 'category',
                             data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+//                            data: [],
                             axisTick: {
                                 alignWithLabel: true
                             },
@@ -89,9 +109,11 @@
                                 borderWidth: 1
                             },
                             data: [1, 7, 3, 7, 3, 2, 1]
+//                            data: []
                         }
                     ]
-                }
+                },
+                value1: 0,
             }
         },
         props: [
@@ -101,11 +123,25 @@
         },
         methods: {
             queryData(){
-                setInterval(() => {
-                    this.option.series[0].data[0] = this.option.series[0].data[0] + 1;
-                    let newOptions = Object.assign({}, this.option);
-                    this.option = newOptions;
-                }, 1000)
+                this.http.get(this.ports.manage.basicDuty, (res) => {
+                    if(res.success){
+                        this.option.xAxis[0].data = [];
+                        this.option.series[0].data = [];
+                        let data = res.data;
+                        Object.keys(data).forEach(p => {
+                            if(p != 'allCount'){
+                                this.option.xAxis[0].data.push(p);
+                                this.option.series[0].data.push(data[p]);
+                            }
+                        })
+                    }
+//                    this.option.xAxis[0].data = []
+//                    this.option.xAxis[0].data = []
+
+//                    this.option.series[0].data[0] = this.option.series[0].data[0] + 1;
+//                    let newOptions = Object.assign({}, this.option);
+//                    this.option = newOptions;
+                })
             }
         },
         computed: {
@@ -116,5 +152,11 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-
+  .content{
+    /*padding-left: 35%;*/
+    height: 82%;
+  }
+  .ivu-carousel-list{
+    height: 100% !important;
+  }
 </style>

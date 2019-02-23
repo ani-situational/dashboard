@@ -68,7 +68,7 @@
                                 shadowBlur: 10
                             }
                         },
-                        data: ['涉案载体管理','枪支管理','车辆管理','人员管理']
+                        data: ['涉密载体管理','枪支管理','车辆管理','人员管理']
                     },
                     series: [
                         {
@@ -91,6 +91,29 @@
             'title',
         ],
         mounted() {
+            this.queryData();
+        },
+        methods:{
+            queryData(){
+                this.http.get(this.ports.manage.officeFind, (res) => {
+                    console.log(res)
+                    if(res.success){
+                        this.option.series[0].data[3]=res.data.system.人员管理;
+                        this.option.series[0].data[2]=res.data.system.车辆管理;
+                        this.option.series[0].data[1]=res.data.system.枪弹管理;
+                        this.option.series[0].data[0]=res.data.system.涉密载体;
+
+                        this.option.series[1].data[3]=res.data.office.人员管理;
+                        this.option.series[1].data[2]=res.data.office.车辆管理;
+                        this.option.series[1].data[1]=res.data.office.枪弹管理;
+                        this.option.series[1].data[0]=res.data.office.涉密载体管理;
+                      let newOptions = Object.assign({},this.option);
+                      console.log('this.newOptions.series');
+                      console.log(this.option.series);
+                      this.option = newOptions;
+                    }
+                });
+            }
         },
         computed: {
             getColorClass: function () {
