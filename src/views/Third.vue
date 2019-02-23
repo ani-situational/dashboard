@@ -2,35 +2,25 @@
     <div class="third">
         <div class="top">
             <div class="top-left">
-                <div class="card-header">
-                    <span>人员情况</span>
-                </div>
+                <CardHeaderSlant titleWord="同期各种问题类型间数量对比" titleWidth=30></CardHeaderSlant>
                 <div class="top-left-content">
                     <div class="top-left-left">
                         <div class="top-left-left-top">
-                            <div class="card-header">
-                                <span>主官在位情况</span>
-                            </div>
+                            <CardHeaderTitle title="主官在位情况"></CardHeaderTitle>
                             <ThirdTopLeftLeftTop></ThirdTopLeftLeftTop>
                         </div>
                         <div class="top-left-left-bottom">
-                            <div class="card-header">
-                                <span>各单位人员外出情况</span>
-                            </div>
+                            <CardHeaderTitle title="各单位人员外出情况"></CardHeaderTitle>
                             <ThirdTopLeftLeftBottom></ThirdTopLeftLeftBottom>
                         </div>
                     </div>
                     <div class="top-left-right">
                         <div class="top-left-right-top">
-                            <div class="card-header">
-                                <span>关键岗位人员情况</span>
-                            </div>
+                            <CardHeaderTitle title="关键岗位人员情况"></CardHeaderTitle>
                             <ThirdTopLeftRightTop></ThirdTopLeftRightTop>
                         </div>
                         <div class="top-left-right-bottom">
-                            <div class="card-header">
-                                <span>重点关注人员情况</span>
-                            </div>
+                            <CardHeaderTitle title="重点关注人员情况"></CardHeaderTitle>
                             <ThirdTopLeftRightBottom></ThirdTopLeftRightBottom>
                         </div>
 
@@ -38,20 +28,14 @@
                 </div>
             </div>
             <div class="top-right">
-                <div class="card-header">
-                    <span>枪支弹药情况</span>
-                </div>
+                <CardHeaderSlant titleWord="同期各种问题类型间数量对比" titleWidth=28></CardHeaderSlant>
                 <div class="top-right-content">
                     <div class="top-right-left">
-                        <div class="card-header">
-                            <span>枪支情况</span>
-                        </div>
+                        <CardHeaderTitle title="枪支情况"></CardHeaderTitle>
                         <ThirdTopRightLeft></ThirdTopRightLeft>
                     </div>
                     <div class="top-right-right">
-                        <div class="card-header">
-                            <span>弹药消耗情况</span>
-                        </div>
+                        <CardHeaderTitle title="弹药消耗情况"></CardHeaderTitle>
                         <ThirdTopRightRight></ThirdTopRightRight>
                     </div>
                 </div>
@@ -60,33 +44,23 @@
         <div class="bottom">
             <div class="bottom-left">
                 <div class="bottom-left-left">
-                    <div class="card-header">
-                        <span>外来人员</span>
-                    </div>
+                    <CardHeaderSlant titleWord="同期各种问题类型间数量对比" titleWidth=65></CardHeaderSlant>
                     <ThirdBottomLeftLeft></ThirdBottomLeftLeft>
                 </div>
                 <div class="bottom-left-right">
-                    <div class="card-header">
-                        <span>勤务车辆情况</span>
-                    </div>
+                    <CardHeaderSlant titleWord="同期各种问题类型间数量对比" titleWidth=65></CardHeaderSlant>
                     <ThirdBottomLeftRight></ThirdBottomLeftRight>
                 </div>
             </div>
             <div class="bottom-right">
-                <div class="card-header">
-                    <span>涉密载体情况</span>
-                </div>
+                <CardHeaderSlant titleWord="同期各种问题类型间数量对比" titleWidth=27></CardHeaderSlant>
                 <div class="bottom-right-content">
                     <div class="bottom-right-left">
-                        <div class="card-header">
-                            <span>涉密载体情况</span>
-                        </div>
+                        <CardHeaderTitle title="涉密载体情况"></CardHeaderTitle>
                         <ThirdBottomRightLeft></ThirdBottomRightLeft>
                     </div>
                     <div class="bottom-right-right">
-                        <div class="card-header">
-                            <span>手机违规使用情况</span>
-                        </div>
+                        <CardHeaderTitle title="手机违规使用情况"></CardHeaderTitle>
                         <ThirdBottomRightRight></ThirdBottomRightRight>
                     </div>
                 </div>
@@ -105,6 +79,8 @@
     import ThirdTopLeftRightTop from '../components/third/ThirdTopLeftRightTop'
     import ThirdTopRightLeft from '../components/third/ThirdTopRightLeft'
     import ThirdTopRightRight from '../components/third/ThirdTopRightRight'
+    import CardHeaderSlant from '../components/CardHeaderSlant'
+    import CardHeaderTitle from '../components/CardHeaderTitle'
     export default {
         data () {
             return {
@@ -112,6 +88,7 @@
             }
         },
         components: {
+            'CardHeaderSlant':CardHeaderSlant,
             'ThirdBottomLeftLeft':ThirdBottomLeftLeft,
             'ThirdBottomLeftRight':ThirdBottomLeftRight,
             'ThirdBottomRightLeft':ThirdBottomRightLeft,
@@ -122,6 +99,7 @@
             'ThirdTopLeftRightTop':ThirdTopLeftRightTop,
             'ThirdTopRightLeft':ThirdTopRightLeft,
             'ThirdTopRightRight':ThirdTopRightRight,
+            'CardHeaderTitle':CardHeaderTitle
         },
         mounted(){
         },
@@ -216,6 +194,7 @@
             display: flex;
             height: 46%;
             .bottom-left {
+
                 display: flex;
                 width: 51.6%;
                 .bottom-left-left {

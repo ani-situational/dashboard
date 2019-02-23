@@ -125,10 +125,15 @@
             justify-content: center;
             align-items: flex-end;
             .title-four-blue{
-                margin-left:-0.05rem;
+                margin-left:-0.08rem;
                 width: 100%;
                 height: 30%;
-                margin-bottom: 30%;
+                @media screen and(max-width: 1500px){
+                    margin-bottom: 25%;
+                }
+                @media screen and(min-width: 1501px){
+                    margin-bottom: 0.06rem;
+                }
                 background-image: url("../assets/images/center-title-line.png");
                 background-size: 100% 100%;
             }
@@ -141,7 +146,7 @@
             align-items: center;
             .title-five-line{
                 margin-top: 0.02rem;
-                margin-left: -0.05rem;
+                margin-left: -0.08rem;
                 width: 100%;
                 border: 0.5px solid rgba(21,74,126,0.8);
             }
