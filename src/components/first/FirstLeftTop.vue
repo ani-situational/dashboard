@@ -1,31 +1,33 @@
 <template>
   <div class="content">
-    <Carousel v-model="value1"
-              :autoplay=false
-              :autoplay-speed=5000
-              arrow="never"
-              :radius-dot=true
-              height="1.42rem"
-              loop
-              style="height:100%;"
+    <div class="content-left"></div>
+    <div class="content-right">
+      <Carousel v-model="value1"
+                :autoplay=false
+                :autoplay-speed=5000
+                arrow="never"
+                :radius-dot=true
+                height="1.42rem"
+                loop
+                style="height:100%;"
 
-    >
-    <CarouselItem style="" >
-      <chart  ref="chart"
-              style="height: 100%;width: 100%"
-              :options="option"
-              :autoresize=true
-      ></chart>
-    </CarouselItem>
-    <CarouselItem>
-      <chart  ref="chart"
-              style="height: 100%;width: 100%"
-              :options="option"
-              :autoresize=true
-      ></chart>
-    </CarouselItem>
-    </Carousel>
-
+      >
+        <CarouselItem style="" >
+          <chart  ref="chart"
+                  style="height: 100%;width: 100%"
+                  :options="option"
+                  :autoresize=true
+          ></chart>
+        </CarouselItem>
+        <CarouselItem>
+          <chart  ref="chart"
+                  style="height: 100%;width: 100%"
+                  :options="option"
+                  :autoresize=true
+          ></chart>
+        </CarouselItem>
+      </Carousel>
+    </div>
   </div>
 </template>
 <script>
@@ -135,6 +137,12 @@
   .content{
     padding-left: 35%;
     height: 82%;
+    .content-left{
+      border: 1px solid grey;
+    }
+    .content-right{
+      border: 1px solid grey;
+    }
   }
   .ivu-carousel-list{
     height: 100% !important;

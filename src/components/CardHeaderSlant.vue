@@ -42,7 +42,6 @@
             'titleWidth'
         ],
         mounted(){
-            console.log(this.aaa)
         },
         computed: {
             getColorClass: function () {
