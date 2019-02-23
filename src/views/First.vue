@@ -99,9 +99,11 @@
     height: 90%;
     font-size: 0.25rem;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     .left{
       width: 25%;
-      padding: 0.2rem 0.1rem 0.2rem 0.1rem;
+      padding: 0.2rem 0 0.1rem 0.1rem;
       /*height: 98%;*/
       .left-top{
         margin: 0 0 0.1rem 0;
@@ -167,7 +169,7 @@
     }
     .right{
       width: 25%;
-      padding: 0.2rem 0.1rem 0.2rem 0.1rem;
+      padding: 0.2rem 0 0.1rem 0;
       .right-top{
         margin: 0 0 0.1rem 0;
         background-color:@bgColor;

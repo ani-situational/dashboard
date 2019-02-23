@@ -47,8 +47,11 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #ffffff !important;
-        width: 100%;
+        width: 99%;
         height:100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .app-header {
         width: 100%;
