@@ -16,20 +16,24 @@
     </div>
     <div class="center">
       <div class="center-top">
+        <div class="center-top-header"></div>
         <FirstCenterTop></FirstCenterTop>
       </div>
       <div class="center-bottom">
-        <div class="center-bottom-left">
-          <LittleCardHeaderTitle title="报警处置情况"></LittleCardHeaderTitle>
-          <FirstCenterBottomLeft></FirstCenterBottomLeft>
-        </div>
-        <div class="center-bottom-center">
-          <LittleCardHeaderTitle title="安全等级"></LittleCardHeaderTitle>
-          <FirstCenterBottomCenter></FirstCenterBottomCenter>
-        </div>
-        <div class="center-bottom-right">
-          <LittleCardHeaderTitle title="安防设备故障"></LittleCardHeaderTitle>
-          <FirstCenterBottomRight></FirstCenterBottomRight>
+        <div class="center-top-header"></div>
+        <div class="center-bottom-content">
+          <div class="center-bottom-left">
+            <LittleCardHeaderTitle title="报警处置情况"></LittleCardHeaderTitle>
+            <FirstCenterBottomLeft></FirstCenterBottomLeft>
+          </div>
+          <div class="center-bottom-center">
+            <LittleCardHeaderTitle title="安全等级"></LittleCardHeaderTitle>
+            <FirstCenterBottomCenter></FirstCenterBottomCenter>
+          </div>
+          <div class="center-bottom-right">
+            <LittleCardHeaderTitle title="安防设备故障"></LittleCardHeaderTitle>
+            <FirstCenterBottomRight></FirstCenterBottomRight>
+          </div>
         </div>
       </div>
     </div>
@@ -94,6 +98,11 @@
 <style lang="less">
   @bgColor:rgba(9,60,118,0.23);
   @centerBottomBgColor:none;
+  .center-top-header{
+    width: 100%;
+    height: 9.5%;
+    border: 1px solid red;
+  }
   .first{
     width: 100%;
     height: 90%;
@@ -123,47 +132,54 @@
       }
     }
     .center{
-      border: 1px solid #696d8d;
+      box-shadow: 0 0 0 1px rgba(186, 247, 238, 0.36) inset;
       margin: 0.1rem 0.1rem 0.05rem 0.1rem;
-      padding: 0.08rem 0.1rem 0.08rem 0.1rem;
+      padding: 0.08rem 0.08rem 0.08rem 0.08rem;
       width: 50%;
       .center-top{
         margin-bottom: 0.1rem;
-        background: none;
-        border: 0.1px solid #0e3367;
+        /*background: none;*/
+        background-image: url("../assets/images/first-center-top.png");
+        background-size: 100% 100%;
+        /*border: 1px solid #baf7ee;*/
         height: 53.2%;
-        box-shadow: 1px 1px 5px #0e3367 inset,
-                    -1px -1px 5px #0e3367 inset;
+        /*//box-shadow: 1px 1px 5px #0e3367 inset,*/
+        /*//            -1px -1px 5px #0e3367 inset;*/
       }
       .center-bottom{
-        background: none;
-        border: 0.1px solid #0e3367;
-        box-shadow: 1px 1px 5px #0e3367 inset,
-                    -1px -1px 5px #0e3367 inset;
+        background-image: url("../assets/images/first-center-top.png");
+        background-size: 100% 100%;
+        //box-shadow: 1px 1px 5px #0e3367 inset,
+        //            -1px -1px 5px #0e3367 inset;
         height: 45.6%;
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;
         /*padding-top: 0.2rem;*/
-        .center-bottom-left{
-          background:  @centerBottomBgColor;
-          height: 88%;
-          width: 32%;
-          /*border: 0.1px solid pink;*/
-          margin: 0 0.5% 0.5% 1%;
-        }
-        .center-bottom-center{
-          background:  @centerBottomBgColor;
-          height: 88%;
-          width: 22%;
-          /*border: 0.1px solid pink;*/
-          margin: 0 0.5% 0.5% 0.5%;
-        }
-        .center-bottom-right{
-          background-color: @centerBottomBgColor;
-          height: 88%;
-          width: 42%;
-          margin: 0 1% 0.5% 0.5%;
-          /*border: 0.1px solid pink;*/
+        .center-bottom-content{
+          height: 100%;
+          display: flex;
+          align-items: flex-end;
+          .center-bottom-left{
+            background:  @centerBottomBgColor;
+            height: 88%;
+            width: 32%;
+            /*border: 0.1px solid pink;*/
+            margin: 0 0.5% 0.5% 1%;
+          }
+          .center-bottom-center{
+            background:  @centerBottomBgColor;
+            height: 88%;
+            width: 22%;
+            /*border: 0.1px solid pink;*/
+            margin: 0 0.5% 0.5% 0.5%;
+          }
+          .center-bottom-right{
+            background-color: @centerBottomBgColor;
+            height: 88%;
+            width: 42%;
+            margin: 0 1% 0.5% 0.5%;
+            /*border: 0.1px solid pink;*/
+          }
         }
       }
     }

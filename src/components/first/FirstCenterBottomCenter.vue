@@ -16,19 +16,19 @@
         data () {
             return {
                 msg: 'CenterBottomCenter',
-                privacy:8,
+                privacy:9,
                 num: 0,
                 divs: [
-                    {isShow: false, classObject: {active: true}, styleObject: {background: '#87c6ed'}},
-                    {isShow: false, classObject: {active: true}, styleObject: {background: '#87c6ed'}},
-                    {isShow: false, classObject: {active: true}, styleObject: {background: '#87c6ed'}},
-                    {isShow: false, classObject: {active: true}, styleObject: {background: '#d3bd0a'}},
-                    {isShow: false, classObject: {active: true}, styleObject: {background: '#d3bd0a'}},
-                    {isShow: false, classObject: {active: true}, styleObject: {background: '#d3bd0a'}},
-                    {isShow: false, classObject: {active: true}, styleObject: {background: '#d3bd0a'}},
-                    {isShow: false, classObject: {active: true}, styleObject: {background: '#9d041e'}},
-                    {isShow: false, classObject: {active: true}, styleObject: {background: '#9d041e'}},
-                    {isShow: false, classObject: {active: true}, styleObject: {background: '#9d041e'}}
+                    {isShow: false, classObject: {active: true}, styleObject: {background: '#80e95b'}},
+                    {isShow: false, classObject: {active: true}, styleObject: {background: '#80e95b'}},
+                    {isShow: false, classObject: {active: true}, styleObject: {background: '#80e95b'}},
+                    {isShow: false, classObject: {active: true}, styleObject: {background: '#b48e23'}},
+                    {isShow: false, classObject: {active: true}, styleObject: {background: '#b48e23'}},
+                    {isShow: false, classObject: {active: true}, styleObject: {background: '#b48e23'}},
+                    {isShow: false, classObject: {active: true}, styleObject: {background: '#b48e23'}},
+                    {isShow: false, classObject: {active: true}, styleObject: {background: '#be0625'}},
+                    {isShow: false, classObject: {active: true}, styleObject: {background: '#be0625'}},
+                    {isShow: false, classObject: {active: true}, styleObject: {background: '#be0625'}}
                 ]
             }
         },
@@ -74,20 +74,20 @@
         justify-content: center;
         align-items: center;
         .container {
-            width: 40%;
-            height: 60%;
-            border: 4px solid #222541;
-            border-radius: 6%;
+            width: 45%;
+            height: 55%;
+            border: 6px solid #222541;
+            border-radius: 8%;
             padding: 0 0 3% 0;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
             .div-item {
-                margin-top: 12%;
+                margin-top: 10%;
                 width: 90%;
                 /*height: 0.07rem;*/
-                height: 13%;
+                height: 8%;
                 .div-main {
                     width: 100%;
                     height: 100%;
