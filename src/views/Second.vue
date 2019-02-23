@@ -2,22 +2,16 @@
   <div class="second">
     <div class="top">
       <div class="top-left">
-        <div class="top-left-header">
-          <span>同期各问题类型间数量对比</span>
-        </div>
+        <CardHeaderSlant titleWord="同期各种问题类型间数量对比" titleWidth=23></CardHeaderSlant>
         <SecondTopLeft></SecondTopLeft>
       </div>
       <div class="top-right">
-        <div class="top-right-header">
-          <span>同期各问题类型间数量对比</span>
-        </div>
+        <CardHeaderSlant titleWord="各单位间问题数量对比" titleWidth=28></CardHeaderSlant>
         <SecondTopRight></SecondTopRight>
       </div>
     </div>
     <div class="bottom">
-      <div class="bottom-header">
-        <span>同期各问题类型间数量对比</span>
-      </div>
+      <CardHeaderSlant titleWord="各单位不同时间问题数量对比" titleWidth=13></CardHeaderSlant>
       <SecondBottom></SecondBottom>
     </div>
   </div>
@@ -26,6 +20,7 @@
     import SecondTopLeft from '../components/second/SecondTopLeft'
     import SecondTopRight from '../components/second/SecondTopRight'
     import SecondBottom from '../components/second/SecondBottom'
+    import CardHeaderSlant from '../components/CardHeaderSlant'
     export default {
         data () {
             return {
@@ -35,7 +30,8 @@
         components:{
             'SecondTopLeft':SecondTopLeft,
             'SecondTopRight':SecondTopRight,
-            'SecondBottom':SecondBottom
+            'SecondBottom':SecondBottom,
+            'CardHeaderSlant':CardHeaderSlant
         },
         mounted(){
         },

@@ -67,7 +67,7 @@
         background-size: cover;
         display: flex;
         .title-one{
-            width: 2%;
+            width: 20px;
             height: 100%;
             /*background: red;*/
             background-image: url("../assets/images/blue-left.png");
@@ -103,7 +103,7 @@
             }
         }
         .title-three{
-            width: 2%;
+            width: 20px;
             height: 100%;
             /*background-image: url("../assets/images/blue-left.png");*/
             /*background-size: 100% 100%;*/
@@ -119,7 +119,7 @@
             }
         }
         .title-four{
-            width: 2.5%;
+            width: 25px;
             height: 100%;
             display: flex;
             justify-content: center;
@@ -140,14 +140,14 @@
             justify-content: center;
             align-items: center;
             .title-five-line{
-                margin-top: 0.6%;
+                margin-top: 0.02rem;
                 margin-left: -0.05rem;
                 width: 100%;
                 border: 0.5px solid rgba(21,74,126,0.8);
             }
         }
         .title-six{
-            width:2%;
+            width:20px;
             height: 100%;
             display: flex;
             justify-content: center;
