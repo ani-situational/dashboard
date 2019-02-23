@@ -1,10 +1,12 @@
 <template>
-    <div class="content">
+    <div class="content" style="position: relative">
         <chart ref="chart1"
                style="height: 100%;width: 100%"
                :options="orgOptions"
                :autoresize=true
         ></chart>
+        <img style="position: absolute;bottom:0px;left:-2px;" src="../../assets/images/left-bottom.png" alt="">
+        <img style="position: absolute;bottom:0px;right:-2px;" src="../../assets/images/right-bottom.png" alt="">
     </div>
 </template>
 <script>
@@ -126,6 +128,6 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
     .content {
-        height: 100%;
+        height: 91.2%;
     }
 </style>

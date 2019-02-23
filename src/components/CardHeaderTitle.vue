@@ -28,7 +28,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
     .title-color{
-        color:#68ebfa;
+        color:#c8f7fe;
     }
     .header {
         width: 100%;

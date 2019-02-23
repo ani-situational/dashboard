@@ -7,9 +7,9 @@
                 </div>
             </div>
             <div class="app-header-nav">
-                <router-link to="/" class="banner-title">首页</router-link>
-                <router-link to="/second" class="banner-title">环比情况</router-link>
-                <router-link to="/third" class="banner-title">重要信息展示</router-link>
+                <router-link to="/" class="banner-title-div"><div :class="firstTitle" class="title">首页</div></router-link>
+                <router-link to="/second" class="banner-title-div"><div :class="secondTitle" class="title">环比情况</div></router-link>
+                <router-link to="/third" class="banner-title-div"><div :class="thirdTitle" class="title">重要信息展示</div></router-link>
             </div>
             <div class="app-header-right">
                 <span class="right-title">{{nowTime}}</span>
@@ -23,10 +23,16 @@
         data(){
             return {
                 nowTime:'',
+                currentRoute: 'first',
             }
         },
         mounted(){
             this.getTimeInterval()
+        },
+        watch:{
+            $route(val){
+                this.currentRoute = val.name;
+            }
         },
         methods:{
             getTimeInterval(){
@@ -38,6 +44,15 @@
             }
         },
         computed:{
+            firstTitle(){
+                return {title1:this.currentRoute === 'first'}
+            },
+            secondTitle(){
+                return {title2:this.currentRoute === 'second'}
+            },
+            thirdTitle(){
+                return {title3:this.currentRoute === 'third'}
+            }
         }
     }
 </script>
@@ -64,7 +79,7 @@
         .app-header-left{
             height: 0.65rem;
             width: 23.5%;
-            border:1px solid red;
+            /*border:1px solid red;*/
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
@@ -73,11 +88,11 @@
             .left-title-div{
                 width: 2.65rem;
                 height: 0.37rem;
-                border: 1px solid black;
+                /*border: 1px solid black;*/
                 background-image: url("./assets/images/title-left-border.png");
                 background-size: 100% 100%;
                 .left-title{
-                    font-size: 0.22rem;
+                    font-size: 0.2rem;
                     font-weight: bold;
                     color: #02eeff;
                     line-height: 0.39rem;
@@ -90,7 +105,7 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            border:1px solid red;
+            /*border:1px solid red;*/
 
             /*padding: 30px;*/
             a {
@@ -111,7 +126,7 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            border:1px solid red;
+            /*border:1px solid red;*/
 
             .right-title{
                 font-size: 0.15rem;
@@ -122,8 +137,40 @@
         }
     }
 
-    .banner-title {
-        font-size: 0.3rem;
+    .banner-title-div {
+        cursor: pointer;
         color: #ffffff;
+        width: 30%;
+        height: 50%;
+        line-height: 190%;
+        background-size: 100% 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+    .title{
+        font-size: 0.12rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .title1{
+        width: 65%;
+        height: 80%;
+        background: url("./assets/images/header-item-bg.png");
+        background-size: 100% 100%;
+    }
+    .title2{
+        width: 65%;
+        height: 80%;
+        background: url("./assets/images/header-item-bg.png");
+        background-size: 100% 100%;
+    }
+    .title3{
+        width: 90%;
+        height: 80%;
+        background: url("./assets/images/header-item-bg.png");
+        background-size: 100% 100%;
     }
 </style>

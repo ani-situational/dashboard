@@ -6,7 +6,7 @@
             :options="option"
             :autoresize=true
     ></chart>
-  </div>
+   </div>
 </template>
 <script>
     export default {

@@ -16,11 +16,11 @@
     </div>
     <div class="center">
       <div class="center-top">
-        <div class="center-top-header"></div>
+        <CardHeaderSlant titleWord="问题管理状态" titleWidth=14></CardHeaderSlant>
         <FirstCenterTop></FirstCenterTop>
       </div>
-      <div class="center-bottom">
-        <div class="center-top-header"></div>
+      <div class="center-bottom"  style="position: relative">
+        <CardHeaderSlant titleWord="重要目标安全技术防范状态" titleWidth=26></CardHeaderSlant>
         <div class="center-bottom-content">
           <div class="center-bottom-left">
             <LittleCardHeaderTitle title="报警处置情况"></LittleCardHeaderTitle>
@@ -35,6 +35,9 @@
             <FirstCenterBottomRight></FirstCenterBottomRight>
           </div>
         </div>
+        <img style="position: absolute;bottom:-2px;left:-2px;" src="../assets/images/left-bottom.png" alt="">
+        <img style="position: absolute;bottom:-2px;right:-2px;" src="../assets/images/right-bottom.png" alt="">
+
       </div>
     </div>
     <div class="right">
@@ -55,6 +58,7 @@
 </template>
 <script>
   import CardHeaderTitle from '../components/CardHeaderTitle'
+  import CardHeaderSlant from '../components/CardHeaderSlant'
   import LittleCardHeaderTitle from '../components/LittleCardHeaderTitle'
   import FirstLeftTop from '../components/first/FirstLeftTop'
   import FirstLeftMiddle from '../components/first/FirstLeftMiddle'
@@ -74,6 +78,7 @@
             }
         },
         components:{
+            'CardHeaderSlant':CardHeaderSlant,
             'CardHeaderTitle':CardHeaderTitle,
             'LittleCardHeaderTitle':LittleCardHeaderTitle,
             'FirstLeftTop':FirstLeftTop,
@@ -98,11 +103,8 @@
 <style lang="less">
   @bgColor:rgba(9,60,118,0.23);
   @centerBottomBgColor:none;
-  .center-top-header{
-    width: 100%;
-    height: 9.5%;
-    border: 1px solid red;
-  }
+  @centerBorder:1px solid rgba(0,131,179,0.23);
+
   .first{
     width: 100%;
     height: 90%;
@@ -132,6 +134,7 @@
       }
     }
     .center{
+      height: 99%;
       box-shadow: 0 0 0 1px rgba(186, 247, 238, 0.36) inset;
       margin: 0.1rem 0.1rem 0.05rem 0.1rem;
       padding: 0.08rem 0.08rem 0.08rem 0.08rem;
@@ -141,8 +144,8 @@
         /*background: none;*/
         background-image: url("../assets/images/first-center-top.png");
         background-size: 100% 100%;
-        /*border: 1px solid #baf7ee;*/
-        height: 53.2%;
+        border: @centerBorder;
+        height: 53.5%;
         /*//box-shadow: 1px 1px 5px #0e3367 inset,*/
         /*//            -1px -1px 5px #0e3367 inset;*/
       }
@@ -151,7 +154,8 @@
         background-size: 100% 100%;
         //box-shadow: 1px 1px 5px #0e3367 inset,
         //            -1px -1px 5px #0e3367 inset;
-        height: 45.6%;
+        border: @centerBorder;
+        height: 45%;
         display: flex;
         flex-direction: column;
         /*padding-top: 0.2rem;*/
